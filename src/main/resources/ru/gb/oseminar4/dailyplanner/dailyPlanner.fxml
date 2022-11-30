@@ -57,5 +57,5 @@
             </AnchorPane>
         </Tab>
     </TabPane>
-    <Button maxHeight="22.0" maxWidth="220" fx:id="addHigh" text="Добавить запись"/>
+    <Button maxHeight="22.0" maxWidth="220" fx:id="addHigh" text="Добавить запись" onMouseClicked="#createTask"/>
 </VBox>

@@ -1,34 +1,23 @@
 package ru.gb.oseminar4.dailyplanner.service;
 
-import ru.gb.oseminar4.dailyplanner.data.Priority;
 import ru.gb.oseminar4.dailyplanner.data.Task;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class TaskService implements ITaskService{
     private final List<Task> taskList;
 
     public TaskService() {
-        this.taskList = new ArrayList<>();
+        this.taskList = new LinkedList<>();
     }
 
     @Override
-    public void createTask(Integer yearOfDeadLine,
-                           Integer monthOfDeadLine,
-                           Integer dayOfDeadLine,
-                           String name,
-                           String patronymic,
-                           String surname,
-                           Priority priority) {
-        this.taskList.add(new Task(yearOfDeadLine,
-                monthOfDeadLine,
-                dayOfDeadLine,
-                name,
-                patronymic,
-                surname,
-                priority));
+    public void createTask(Map<String, String> data) {
+        data.forEach((key, value) -> {
+        });
     }
 
     @Override

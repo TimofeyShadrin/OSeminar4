@@ -15,9 +15,7 @@ public class Task {
     private final Priority priority;
     private static final AtomicLong idAtomic = new AtomicLong(0);
 
-    public Task(Integer yearOfDeadLine,
-                Integer monthOfDeadLine,
-                Integer dayOfDeadLine,
+    public Task(String dateOfDeadLine,
                 String name,
                 String patronymic,
                 String surname,
@@ -32,9 +30,7 @@ public class Task {
         LocalTime localTime = LocalTime.now();
         this.time = localTime.getHour() + ":" + localTime.getMinute();
 
-        this.deadLine = yearOfDeadLine + "-" +
-                monthOfDeadLine + "-" +
-                dayOfDeadLine;
+        this.deadLine = dateOfDeadLine;
 
         this.fullName = name + " " + patronymic + " " + surname;
         this.priority = priority;
