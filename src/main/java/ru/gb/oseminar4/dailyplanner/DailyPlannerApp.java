@@ -11,8 +11,8 @@ public class DailyPlannerApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(DailyPlannerApp.class.getResource("dailyPlanner.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
-        stage.setTitle("Hello!");
+        Scene scene = new Scene(fxmlLoader.load(), 640, 580);
+        stage.setTitle("Мой еженедельник");
         stage.setScene(scene);
         stage.show();
     }
