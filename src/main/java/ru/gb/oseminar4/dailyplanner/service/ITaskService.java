@@ -8,4 +8,5 @@ public interface ITaskService {
     void createTask(Map<String, String> data);
     void deleteTask(Integer id);
     List<Task> getAll();
+    void clearAll();
 }

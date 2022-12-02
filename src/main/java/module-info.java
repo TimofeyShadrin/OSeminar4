@@ -1,6 +1,7 @@
 module ru.gb.oseminar.dailyplanner {
     requires javafx.controls;
     requires javafx.fxml;
+    requires org.xerial.sqlitejdbc;
 
 
     opens ru.gb.oseminar4.dailyplanner to javafx.fxml;

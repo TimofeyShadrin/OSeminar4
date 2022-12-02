@@ -24,10 +24,10 @@
             <AnchorPane minHeight="420.0" minWidth="620.0">
                 <TableView fx:id="high" prefHeight="400.0" prefWidth="620.0">
                     <columns>
-                        <TableColumn maxWidth="80" text="Дата"/>
-                        <TableColumn maxWidth="80" text="Время"/>
-                        <TableColumn maxWidth="80" text="Дедлайн"/>
-                        <TableColumn maxWidth="380" prefWidth="380.0" text="ФИО создателя"/>
+                        <TableColumn maxWidth="80" text="Дата" fx:id="dateHigh"/>
+                        <TableColumn maxWidth="80" text="Время" fx:id="timeHigh"/>
+                        <TableColumn maxWidth="80" text="Дедлайн" fx:id="deadlineHigh"/>
+                        <TableColumn maxWidth="380" prefWidth="380.0" text="ФИО создателя" fx:id="fullnessHigh"/>
                     </columns>
                 </TableView>
             </AnchorPane>
@@ -36,10 +36,10 @@
             <AnchorPane minHeight="420.0" minWidth="620.0">
                 <TableView fx:id="middle" prefHeight="400.0" prefWidth="620.0">
                     <columns>
-                        <TableColumn maxWidth="80" text="Дата"/>
-                        <TableColumn maxWidth="80" text="Время"/>
-                        <TableColumn maxWidth="80" text="Дедлайн"/>
-                        <TableColumn maxWidth="380" prefWidth="380.0" text="ФИО создателя"/>
+                        <TableColumn maxWidth="80" text="Дата" fx:id="dateMiddle"/>
+                        <TableColumn maxWidth="80" text="Время" fx:id="timeMiddle"/>
+                        <TableColumn maxWidth="80" text="Дедлайн" fx:id="deadLineMiddle"/>
+                        <TableColumn maxWidth="380" prefWidth="380.0" text="ФИО создателя" fx:id="fullnessMiddle"/>
                     </columns>
                 </TableView>
             </AnchorPane>
@@ -48,10 +48,10 @@
             <AnchorPane minHeight="420.0" minWidth="620.0">
                 <TableView fx:id="low" prefHeight="400.0" prefWidth="620.0">
                     <columns>
-                        <TableColumn maxWidth="80" text="Дата"/>
-                        <TableColumn maxWidth="80" text="Время"/>
-                        <TableColumn maxWidth="80" text="Дедлайн"/>
-                        <TableColumn maxWidth="380" prefWidth="380.0" text="ФИО создателя"/>
+                        <TableColumn maxWidth="80" text="Дата" fx:id="dateLow"/>
+                        <TableColumn maxWidth="80" text="Время" fx:id="timeLow"/>
+                        <TableColumn maxWidth="80" text="Дедлайн" fx:id="deadlineLow"/>
+                        <TableColumn maxWidth="380" prefWidth="380.0" text="ФИО создателя" fx:id="fullnessLow"/>
                     </columns>
                 </TableView>
             </AnchorPane>

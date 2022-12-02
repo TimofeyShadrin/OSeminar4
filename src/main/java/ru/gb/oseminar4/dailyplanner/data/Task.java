@@ -3,23 +3,25 @@ package ru.gb.oseminar4.dailyplanner.data;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Task {
 
-    private final Long id;
+    private final Integer id;
     private final String date;
     private final String time;
-    private final String deadLine;
-    private final String fullName;
-    private final Priority priority;
-    private static final AtomicLong idAtomic = new AtomicLong(0);
+    private String deadLine;
+    private String fullName;
+    private Priority priority;
+    private String task;
+    private static final AtomicInteger idAtomic = new AtomicInteger(0);
 
     public Task(String dateOfDeadLine,
                 String name,
                 String patronymic,
                 String surname,
-                Priority priority) {
+                Priority priority,
+                String task) {
         this.id = idAtomic.incrementAndGet();
 
         LocalDate localDate = LocalDate.now();
@@ -34,9 +36,10 @@ public class Task {
 
         this.fullName = name + " " + patronymic + " " + surname;
         this.priority = priority;
+        this.task = task;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -60,6 +63,26 @@ public class Task {
         return priority;
     }
 
+    public String getTask() {
+        return task;
+    }
+
+    public void setTask(String task) {
+        this.task = task;
+    }
+
+    public void setDeadLine(String deadLine) {
+        this.deadLine = deadLine;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public void setPriority(Priority priority) {
+        this.priority = priority;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -77,13 +100,14 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task{" +
-                "id=" + id +
-                ", date='" + date + '\'' +
-                ", time='" + time + '\'' +
-                ", deadLine='" + deadLine + '\'' +
-                ", fullName='" + fullName + '\'' +
+        return ("Task No "+ id +
+                ", date=" + date +
+                ", time=" + time +
+                ", deadLine=" + deadLine +
+                ", fullName=" + fullName +
                 ", priority=" + priority +
-                '}';
+                ", task=" + task + "\n")
+                .replace("[", "")
+                .replace("]", "");
     }
 }
