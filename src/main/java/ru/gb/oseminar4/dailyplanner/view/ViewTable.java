@@ -49,8 +49,8 @@ public class ViewTable<T extends TaskForTable> {
                             DBHandler dbHandler = DBHandler.getInstance();
                             dbHandler.deleteTask(rowData.getId());
                             Platform.runLater(() -> observableList.remove(rowData));
-                            alert.close();
                             tableView.refresh();
+                            alert.close();
                         } catch (SQLException e) {
                             throw new RuntimeException(e);
                         }

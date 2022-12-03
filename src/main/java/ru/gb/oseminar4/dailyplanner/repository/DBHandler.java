@@ -1,13 +1,14 @@
 package ru.gb.oseminar4.dailyplanner.repository;
 
 import org.sqlite.JDBC;
-import ru.gb.oseminar4.dailyplanner.data.TaskForTable;
 import ru.gb.oseminar4.dailyplanner.data.Task;
+import ru.gb.oseminar4.dailyplanner.data.TaskForTable;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class DBHandler {
 
@@ -36,6 +37,7 @@ public class DBHandler {
 
         // Statement используется для того, чтобы выполнить sql-запрос
         try (Statement statement = this.connection.createStatement()) {
+            Logger.getAnonymousLogger().info("Making a request to DB...");
             // В данный список будем загружать наши задачи, полученные из БД
             List<TaskForTable> tasks = new ArrayList<>();
             // В resultSet будет храниться результат нашего запроса,
@@ -54,6 +56,7 @@ public class DBHandler {
                         ));
             }
             // Возвращаем наш список
+            Logger.getAnonymousLogger().info("DONE");
             return tasks;
 
         } catch (SQLException e) {
@@ -75,8 +78,10 @@ public class DBHandler {
             statement.setObject(4, task.getFullName());
             statement.setObject(5, task.getPriority().toString());
             statement.setObject(6, task.getTask());
+            Logger.getAnonymousLogger().info("Making a request to DB...");
             // Выполняем запрос
             statement.execute();
+            Logger.getAnonymousLogger().info("DONE");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -87,8 +92,10 @@ public class DBHandler {
         try (PreparedStatement statement = this.connection.prepareStatement(
                 "DELETE FROM tasks WHERE id = ?")) {
             statement.setObject(1, id);
+            Logger.getAnonymousLogger().info("Making a request to DB...");
             // Выполняем запрос
             statement.execute();
+            Logger.getAnonymousLogger().info("DONE");
         } catch (SQLException e) {
             e.printStackTrace();
         }

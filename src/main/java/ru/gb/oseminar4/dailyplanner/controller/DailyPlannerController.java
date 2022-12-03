@@ -92,7 +92,7 @@ public class DailyPlannerController implements Initializable {
         }
     }
 
-    private void refreshTable() {
+    public void refreshTable() {
         Platform.runLater(() -> {
             low.getItems().clear();
             high.getItems().clear();
