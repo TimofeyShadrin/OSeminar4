@@ -4,13 +4,13 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class TaskForTable {
-    SimpleIntegerProperty id;
-    SimpleStringProperty date;
-    SimpleStringProperty time;
-    SimpleStringProperty deadline;
-    SimpleStringProperty fullness;
-    SimpleStringProperty priority;
-    SimpleStringProperty task;
+    private final SimpleIntegerProperty id;
+    private final SimpleStringProperty date;
+    private final SimpleStringProperty time;
+    private final SimpleStringProperty deadline;
+    private final SimpleStringProperty fullness;
+    private final SimpleStringProperty priority;
+    private final SimpleStringProperty task;
 
     public TaskForTable(Integer id, String date, String time,
                         String deadline, String fullness,

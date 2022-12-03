@@ -26,8 +26,8 @@
                     <columns>
                         <TableColumn maxWidth="80" text="Дата" fx:id="dateHigh"/>
                         <TableColumn maxWidth="80" text="Время" fx:id="timeHigh"/>
-                        <TableColumn maxWidth="80" text="Дедлайн" fx:id="deadlineHigh"/>
-                        <TableColumn maxWidth="380" prefWidth="380.0" text="ФИО создателя" fx:id="fullnessHigh"/>
+                        <TableColumn maxWidth="100" text="Дедлайн" fx:id="deadlineHigh"/>
+                        <TableColumn maxWidth="360" prefWidth="380.0" text="ФИО создателя" fx:id="fullnessHigh"/>
                     </columns>
                 </TableView>
             </AnchorPane>
@@ -38,8 +38,8 @@
                     <columns>
                         <TableColumn maxWidth="80" text="Дата" fx:id="dateMiddle"/>
                         <TableColumn maxWidth="80" text="Время" fx:id="timeMiddle"/>
-                        <TableColumn maxWidth="80" text="Дедлайн" fx:id="deadLineMiddle"/>
-                        <TableColumn maxWidth="380" prefWidth="380.0" text="ФИО создателя" fx:id="fullnessMiddle"/>
+                        <TableColumn maxWidth="100" text="Дедлайн" fx:id="deadLineMiddle"/>
+                        <TableColumn maxWidth="360" prefWidth="380.0" text="ФИО создателя" fx:id="fullnessMiddle"/>
                     </columns>
                 </TableView>
             </AnchorPane>
@@ -50,8 +50,8 @@
                     <columns>
                         <TableColumn maxWidth="80" text="Дата" fx:id="dateLow"/>
                         <TableColumn maxWidth="80" text="Время" fx:id="timeLow"/>
-                        <TableColumn maxWidth="80" text="Дедлайн" fx:id="deadlineLow"/>
-                        <TableColumn maxWidth="380" prefWidth="380.0" text="ФИО создателя" fx:id="fullnessLow"/>
+                        <TableColumn maxWidth="100" text="Дедлайн" fx:id="deadlineLow"/>
+                        <TableColumn maxWidth="360" prefWidth="380.0" text="ФИО создателя" fx:id="fullnessLow"/>
                     </columns>
                 </TableView>
             </AnchorPane>
