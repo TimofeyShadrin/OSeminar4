@@ -40,9 +40,10 @@ public class ViewTable<T extends TaskForTable> {
             row.setOnMouseClicked(event -> {
                 if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
                     T rowData = row.getItem();
+                    ButtonType FIX = new ButtonType("FIX");
                     Alert alert = new Alert(
                             Alert.AlertType.CONFIRMATION, rowData + "\n\nДело сделано, удалить его?",
-                            ButtonType.YES, ButtonType.NO);
+                            ButtonType.YES, FIX, ButtonType.NO);
                     alert.showAndWait();
                     if (alert.getResult() == ButtonType.YES) {
                         try {
@@ -54,6 +55,8 @@ public class ViewTable<T extends TaskForTable> {
                         } catch (SQLException e) {
                             throw new RuntimeException(e);
                         }
+                    } else if (alert.getResult() == FIX) {
+                        System.out.println("Test");
                     }
                 }
             });

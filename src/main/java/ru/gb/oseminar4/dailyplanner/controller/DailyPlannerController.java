@@ -6,7 +6,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.input.MouseEvent;
 import ru.gb.oseminar4.dailyplanner.data.Priority;
 import ru.gb.oseminar4.dailyplanner.data.TaskForTable;
 import ru.gb.oseminar4.dailyplanner.repository.DBHandler;
@@ -61,7 +60,8 @@ public class DailyPlannerController implements Initializable {
         initTable();
     }
 
-    public void createTask(MouseEvent mouseEvent) throws SQLException {
+    @FXML
+    public void createTask() throws SQLException {
         ChildWindow childWindow = new ChildWindow();
         childWindow.start();
         if (!(childWindow.getResult()).isEmpty()) {
@@ -79,20 +79,20 @@ public class DailyPlannerController implements Initializable {
             DBHandler dbHandler = DBHandler.getInstance();
             dbHandler.getAllTasks().forEach(taskForTableService::addTaskForTable);
             ViewTable<TaskForTable> tableLow = new ViewTable<>(low, dateLow, timeLow, deadlineLow,
-                    fullnessLow, taskForTableService.sortAll().get(Priority.LOW.getPriority()));
+                    fullnessLow, taskForTableService.sortAll().get(Priority.LOW));
             tableLow.sendOnTable();
             ViewTable<TaskForTable> tableMiddle = new ViewTable<>(middle, dateMiddle, timeMiddle, deadLineMiddle,
-                    fullnessMiddle, taskForTableService.sortAll().get(Priority.MIDDLE.getPriority()));
+                    fullnessMiddle, taskForTableService.sortAll().get(Priority.MIDDLE));
             tableMiddle.sendOnTable();
             ViewTable<TaskForTable> tableHigh = new ViewTable<>(high, dateHigh, timeHigh, deadlineHigh,
-                    fullnessHigh, taskForTableService.sortAll().get(Priority.HIGH.getPriority()));
+                    fullnessHigh, taskForTableService.sortAll().get(Priority.HIGH));
             tableHigh.sendOnTable();
         } catch (SQLException e) {
             throw new IllegalStateException("DB not found!");
         }
     }
 
-    public void refreshTable() {
+    private void refreshTable() {
         Platform.runLater(() -> {
             low.getItems().clear();
             high.getItems().clear();

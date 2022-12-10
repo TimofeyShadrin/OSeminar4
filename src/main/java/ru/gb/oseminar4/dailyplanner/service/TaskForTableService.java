@@ -9,9 +9,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TaskForTableService implements ITaskForTableService{
+public class TaskForTableService implements ITaskForTableService, ClearForTaskService{
 
-    ObservableList<TaskForTable> observableList;
+    private final ObservableList<TaskForTable> observableList;
 
     public TaskForTableService() {
         this.observableList = FXCollections.observableArrayList();
@@ -28,10 +28,10 @@ public class TaskForTableService implements ITaskForTableService{
     }
 
     @Override
-    public Map<String, ObservableList<TaskForTable>> sortAll() {
-        Map<String, ObservableList<TaskForTable>> result = new HashMap<>();
+    public Map<Priority, ObservableList<TaskForTable>> sortAll() {
+        Map<Priority, ObservableList<TaskForTable>> result = new HashMap<>();
         for (Priority priority : Priority.values()) {
-            result.put(priority.getPriority(), (this.observableList.stream()
+            result.put(priority, (this.observableList.stream()
                     .filter(taskForTable -> (taskForTable.getPriority()).equalsIgnoreCase(priority.getPriority()))
                     .collect(FXCollections::observableArrayList,
                             List::add,
@@ -41,6 +41,7 @@ public class TaskForTableService implements ITaskForTableService{
         return result;
     }
 
+    @Override
     public void clearAll() {
         this.observableList.clear();
     }
